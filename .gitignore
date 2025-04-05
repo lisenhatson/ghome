@@ -3,13 +3,16 @@
 .local/*
 .config/*
 
-# I don't understand
+# Irony
 !.local/
 !.config/
 
-# Include specific files
+# kk
 !.config/mimeapps.list
 !.config/user-dirs.dirs
+!.gtkrc-2.0
+!.xprofile
+!.zprofile
 
 # AI sucks
 !.config/dunst/
