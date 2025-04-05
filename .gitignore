@@ -7,6 +7,35 @@
 !.config/mimeapps.list
 !.config/user-dirs.dirs
 
+# AI sucks
+!.config/dunst/
+!.config/fontconfig/
+!.config/gtk-2.0/
+!.config/gtk-3.0/
+!.config/gtk-4.0/
+!.config/mpv/
+!.config/nvim/
+!.config/pulse/
+!.config/sxiv/
+!.config/wal/
+!.config/yazi/
+!.config/fastfetch/
+!.config/lf/
+!.config/ncmpcpp/
+!.config/pinentry/
+!.config/python/
+!.config/wget/
+!.config/zathura/
+!.config/firefox/
+!.config/mpd/
+!.config/nsxiv/
+!.config/pipewire/
+!.config/pcmanfm/
+!.config/shell/
+!.config/tmux/
+!.config/x11/
+!.config/zsh/
+
 # Include specific config directories and their contents
 !.config/dunst/**
 !.config/fontconfig/**
@@ -43,6 +72,9 @@
 .config/lf/shortcutrc
 
 # Include relevant local directories
+!.local/bin/
+!.local/share/larbs/
+!.local/share/applications/
 !.local/bin/**
 !.local/share/larbs/**
 !.local/share/applications/**
