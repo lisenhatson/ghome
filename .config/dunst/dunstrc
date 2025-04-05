@@ -1,0 +1,27 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    width = 370
+    height = 350
+    offset = 0x19
+    padding = 5
+    horizontal_padding = 5
+    transparency = 15
+    font = "uzura_font, monospace"
+    format = "<b>%s</b>\n%b"
+
+[urgency_low]
+    background = "#4e566e"  # Slate Blue (neutral)
+    foreground = "#c7c9d4"  # Light silver
+    timeout = 3
+
+[urgency_normal]
+    foreground = "#f0f0f0"  # Off white
+    background = "#2e3440"  # Charcoal Blue (calming, neutral)
+    timeout = 5
+
+[urgency_critical]
+    background = "#bf616a"  # Muted Red (for alert, but not too bright)
+    foreground = "#eceff4"  # Soft white
+    frame_color = "#d8dee9"  # Light grayish blue (frame contrast)
+    timeout = 10

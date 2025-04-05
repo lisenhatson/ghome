@@ -1,0 +1,85 @@
+#!/bin/sh
+
+# Function to display usage information
+usage() {
+    echo "Usage: $0 [-c] <input_filename> [<output_filename>]"
+    echo "Converts JSON color data to Xresources format using jq."
+    echo
+    echo "Arguments:"
+    echo "  -c                  Copy to clipboard instead of saving to file"
+    echo "  <input_filename>    JSON file containing color data"
+    echo "  <output_filename>   Optional: File to save the converted output"
+    echo
+    echo "Example:"
+    echo "  $0 colors.json xresources.txt"
+    echo "  $0 -c colors.json"
+    echo
+    echo "Options:"
+    echo "  -h, --help  Display this help message and exit"
+}
+
+# Check if help option is provided
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+    usage
+    exit 0
+fi
+
+# Check if -c option is provided (for clipboard)
+copy_to_clipboard=false
+if [ "$1" == "-c" ]; then
+    copy_to_clipboard=true
+    shift # Shift arguments to the left to remove -c from the argument list
+fi
+
+# Check if filename arguments are provided
+if [ $# -lt 1 ]; then
+    echo "Error: Insufficient arguments."
+    usage
+    exit 1
+fi
+
+input_file="$1"
+output_file="$2"
+
+# Check if the input file exists
+if [ ! -f "$input_file" ]; then
+    echo "Error: File '$input_file' not found."
+    exit 1
+fi
+
+# If output filename is not provided and not copying to clipboard, set default output
+if [ -z "$output_file" ] && [ "$copy_to_clipboard" = false ]; then
+    output_file="output.txt"
+fi
+
+# Execute jq command to convert JSON to Xresources format
+converted_data=$(jq -r '[
+  {"color": "!!", "value": .name},
+  {"color": "*.color0", "value": .color_01},
+  {"color": "*.color1", "value": .color_02},
+  {"color": "*.color2", "value": .color_03},
+  {"color": "*.color3", "value": .color_04},
+  {"color": "*.color4", "value": .color_05},
+  {"color": "*.color5", "value": .color_06},
+  {"color": "*.color6", "value": .color_07},
+  {"color": "*.color7", "value": .color_08},
+  {"color": "*.color8", "value": .color_09},
+  {"color": "*.color9", "value": .color_10},
+  {"color": "*.color10", "value": .color_11},
+  {"color": "*.color11", "value": .color_12},
+  {"color": "*.color12", "value": .color_13},
+  {"color": "*.color13", "value": .color_14},
+  {"color": "*.color14", "value": .color_15},
+  {"color": "*.color15", "value": .color_16},
+  {"color": "*.foreground", "value": .foreground},
+  {"color": "*.background", "value": .background}
+] | map("\(.color):\t\(.value|ascii_downcase)") | .[]' "$input_file")
+
+# Decide whether to save to file or copy to clipboard
+if [ "$copy_to_clipboard" = true ]; then
+    echo "$converted_data" | xclip -selection clipboard
+    echo "Processed data copied to clipboard."
+else
+    echo "$converted_data" > "$output_file"
+    echo "Processed data saved to '$output_file'."
+fi

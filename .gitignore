@@ -3,6 +3,10 @@
 .local/*
 .config/*
 
+# I don't understand
+!.local/
+!.config/
+
 # Include specific files
 !.config/mimeapps.list
 !.config/user-dirs.dirs
@@ -70,6 +74,11 @@
 .config/shell/shortcutrc
 .config/shell/zshnameddirrc
 .config/lf/shortcutrc
+
+# Exclude embedded
+.config/zsh/plugins/zsh-syntax-highlighting
+# .local/bin/extra/vimv1
+
 
 # Include relevant local directories
 !.local/bin/
