@@ -79,7 +79,7 @@
 .config/lf/shortcutrc
 
 # Exclude embedded
-.config/zsh/plugins/zsh-syntax-highlighting
+.config/zsh/plugins/**
 # .local/bin/extra/vimv1
 
 
