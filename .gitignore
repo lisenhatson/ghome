@@ -79,8 +79,10 @@
 .config/lf/shortcutrc
 
 # Exclude embedded
+!.config/zsh/
+!.config/zsh/**
 .config/zsh/plugins/
-.config/zsh/plugins/**
+.config/zsh/plugins/*
 
 # Include relevant local directories
 !.local/bin/
