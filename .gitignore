@@ -79,9 +79,8 @@
 .config/lf/shortcutrc
 
 # Exclude embedded
+.config/zsh/plugins/
 .config/zsh/plugins/**
-# .local/bin/extra/vimv1
-
 
 # Include relevant local directories
 !.local/bin/
