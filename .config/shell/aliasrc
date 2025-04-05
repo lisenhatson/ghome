@@ -63,4 +63,4 @@ alias \
 	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutenvrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
 	weath="less -S ${XDG_CACHE_HOME:-$HOME/.cache}/weatherreport" \
-    dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+    ghome="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
