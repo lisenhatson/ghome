@@ -77,7 +77,8 @@
 .config/shell/zshnameddirrc
 .config/lf/shortcutrc
 
-.config/zsh/*
+# Only track .zshrc in zsh config
+.config/zsh/**
 !.config/zsh/.zshrc
 
 # Include relevant local directories
