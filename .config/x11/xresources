@@ -14,102 +14,102 @@
 /* cyan		6	14 */
 /* white	7	15 */
 
-/* ! Twilight Depths - Xresources Theme */
-/* ! Based on Harmonic16 Dark with a deeper blue focus */
-/* ! Created on March 17, 2025 */
+! Twilight Depths - Xresources Theme
+! Based on Harmonic16 Dark with a deeper blue focus
+! Created on March 17, 2025
 
-/* ! Define base colors */
-/* #define base00 #0a1824 */
-/* #define base01 #1a2f46 */
-/* #define base02 #354c69 */
-/* #define base03 #526e89 */
-/* #define base04 #98aec2 */
-/* #define base05 #c5d2e0 */
-/* #define base06 #dfe7ef */
-/* #define base07 #f0f5fa */
-/* #define base08 #cf7346 */
-/* #define base09 #d9b343 */
-/* #define base0A #7ac256 */
-/* #define base0B #42d0a5 */
-/* #define base0C #3e9bd8 */
-/* #define base0D #9c52d9 */
-/* #define base0E #d84e99 */
-/* #define base0F #e05252 */
+! Define base colors
+#define base00 #0a1824
+#define base01 #1a2f46
+#define base02 #354c69
+#define base03 #526e89
+#define base04 #98aec2
+#define base05 #c5d2e0
+#define base06 #dfe7ef
+#define base07 #f0f5fa
+#define base08 #cf7346
+#define base09 #d9b343
+#define base0A #7ac256
+#define base0B #42d0a5
+#define base0C #3e9bd8
+#define base0D #9c52d9
+#define base0E #d84e99
+#define base0F #e05252
 
-/* *.foreground:   base05 */
-/* #ifdef background_opacity */
-/* *.background:   [background_opacity]base00 */
-/* #else */
-/* *.background:   base00 */
-/* #endif */
-/* *.cursorColor:  base05 */
-
-/* *.color0:       base00 */
-/* *.color1:       base08 */
-/* *.color2:       base0B */
-/* *.color3:       base0A */
-/* *.color4:       base0D */
-/* *.color5:       base0E */
-/* *.color6:       base0C */
-/* *.color7:       base05 */
-
-/* *.color8:       base03 */
-/* *.color9:       base08 */
-/* *.color10:      base0B */
-/* *.color11:      base0A */
-/* *.color12:      base0D */
-/* *.color13:      base0E */
-/* *.color14:      base0C */
-/* *.color15:      base07 */
-
-/* ! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt), */
-/* ! use 'shell' template to set these if necessary */
-/* *.color16:      base09 */
-/* *.color17:      base0F */
-/* *.color18:      base01 */
-/* *.color19:      base02 */
-/* *.color20:      base04 */
-/* *.color21:      base06 */
-
-! Elio Theme
-#define base00 #041A3B
-#define base01 #303030
-#define base02 #5D5D5D
-#define base03 #6AB017
-#define base04 #FFC005
-#define base05 #F2F2F2
-#define base06 #FFD00A
-#define base07 #F2F2F2
-#define base08 #E1321A
-#define base09 #FF361E
-#define base0A #7BC91F
-#define base0B #2AA7E7
-#define base0C #0071FF
-#define base0D #729FCF
-#define base0E #EC0048
-#define base0F #A020F0
-
-*.background:   base00
 *.foreground:   base05
+#ifdef background_opacity
+*.background:   [background_opacity]base00
+#else
+*.background:   base00
+#endif
 *.cursorColor:  base05
 
-*.color0:       base01
+*.color0:       base00
 *.color1:       base08
-*.color2:       base03
-*.color3:       base04
+*.color2:       base0B
+*.color3:       base0A
 *.color4:       base0D
 *.color5:       base0E
-*.color6:       base0B
+*.color6:       base0C
 *.color7:       base05
 
-*.color8:       base02
-*.color9:       base09
-*.color10:      base0A
-*.color11:      base06
-*.color12:      base0C
-*.color13:      base0F
-*.color14:      base0B
+*.color8:       base03
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
 *.color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
+
+/* ! Elio Theme */
+/* #define base00 #041A3B */
+/* #define base01 #303030 */
+/* #define base02 #5D5D5D */
+/* #define base03 #6AB017 */
+/* #define base04 #FFC005 */
+/* #define base05 #F2F2F2 */
+/* #define base06 #FFD00A */
+/* #define base07 #F2F2F2 */
+/* #define base08 #E1321A */
+/* #define base09 #FF361E */
+/* #define base0A #7BC91F */
+/* #define base0B #2AA7E7 */
+/* #define base0C #0071FF */
+/* #define base0D #729FCF */
+/* #define base0E #EC0048 */
+/* #define base0F #A020F0 */
+
+/* *.background:   base00 */
+/* *.foreground:   base05 */
+/* *.cursorColor:  base05 */
+
+/* *.color0:       base01 */
+/* *.color1:       base08 */
+/* *.color2:       base03 */
+/* *.color3:       base04 */
+/* *.color4:       base0D */
+/* *.color5:       base0E */
+/* *.color6:       base0B */
+/* *.color7:       base05 */
+
+/* *.color8:       base02 */
+/* *.color9:       base09 */
+/* *.color10:      base0A */
+/* *.color11:      base06 */
+/* *.color12:      base0C */
+/* *.color13:      base0F */
+/* *.color14:      base0B */
+/* *.color15:      base07 */
 
 
 /* ! Catpuccin Latte Tweaked */
@@ -277,7 +277,7 @@ dwm.normbordercolor: base02
 dwm.normbgcolor:     base00
 dwm.normfgcolor:     base07
 dwm.selbordercolor:  base0E
-dwm.selbgcolor:      base0D
+dwm.selbgcolor:      base0C
 dwm.selfgcolor:      base00
 
 

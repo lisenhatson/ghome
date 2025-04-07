@@ -17,6 +17,9 @@
 .config/zsh/**
 !.config/zsh/.zshrc
 
+.config/thorium/
+.config/thorium/**
+
 # AI sucks
 !.config/dunst/
 !.config/fontconfig/
