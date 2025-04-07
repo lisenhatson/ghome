@@ -1,10 +1,8 @@
-# Luke's config for the Zoomer Shell
-
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 # PROMPT=$'%B%F{white}╭──(%f%F{green}%n%f%F{blue}@%f%F{magenta}%m%f%F{red}:%f %F{yellow}%~%f%F{white})%f\n%F{white}╰─%b%f$ '
 # RPROMPT=$'%B%F{yellow}[%T]%f%b'
-PROMPT=$'%B%F{white}╭──(%f%F{green}%n%f%F%F{blue}:%f %F{yellow}%~%f%F{white})%f\n%F{white}╰─%b%f$ '
+PROMPT=$'%B%F{blue}╭──(%f%F{green}%n%f%F%F{magenta}:%f %F{yellow}%~%f%F{blue})%f\n%F{blue}╰─%b%f$ '
 RPROMPT=$'%B%F{yellow}[%T]%f%b'
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.

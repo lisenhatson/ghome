@@ -35,7 +35,7 @@ return {
                     background = true,
                 },
                 style = {
-                    name = 'mariana', -- moonlight, earliestsummer, dracula, oceanic, dracula_blood, deep ocean, darker, palenight, monokai, mariana, emerald, middlenight_blue
+                    name = 'earliestsummer', -- moonlight, earliestsummer, dracula, oceanic, dracula_blood, deep ocean, darker, palenight, monokai, mariana, emerald, middlenight_blue
                     darker_contrast = true,
                 },
             })

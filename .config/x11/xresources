@@ -14,62 +14,62 @@
 /* cyan		6	14 */
 /* white	7	15 */
 
-! Twilight Depths - Xresources Theme
-! Based on Harmonic16 Dark with a deeper blue focus
-! Created on March 17, 2025
+/* ! Twilight Depths - Xresources Theme */
+/* ! Based on Harmonic16 Dark with a deeper blue focus */
+/* ! Created on March 17, 2025 */
 
-! Define base colors
-#define base00 #0a1824
-#define base01 #1a2f46
-#define base02 #354c69
-#define base03 #526e89
-#define base04 #98aec2
-#define base05 #c5d2e0
-#define base06 #dfe7ef
-#define base07 #f0f5fa
-#define base08 #cf7346
-#define base09 #d9b343
-#define base0A #7ac256
-#define base0B #42d0a5
-#define base0C #3e9bd8
-#define base0D #9c52d9
-#define base0E #d84e99
-#define base0F #e05252
+/* ! Define base colors */
+/* #define base00 #0a1824 */
+/* #define base01 #1a2f46 */
+/* #define base02 #354c69 */
+/* #define base03 #526e89 */
+/* #define base04 #98aec2 */
+/* #define base05 #c5d2e0 */
+/* #define base06 #dfe7ef */
+/* #define base07 #f0f5fa */
+/* #define base08 #cf7346 */
+/* #define base09 #d9b343 */
+/* #define base0A #7ac256 */
+/* #define base0B #42d0a5 */
+/* #define base0C #3e9bd8 */
+/* #define base0D #9c52d9 */
+/* #define base0E #d84e99 */
+/* #define base0F #e05252 */
 
-*.foreground:   base05
-#ifdef background_opacity
-*.background:   [background_opacity]base00
-#else
-*.background:   base00
-#endif
-*.cursorColor:  base05
+/* *.foreground:   base05 */
+/* #ifdef background_opacity */
+/* *.background:   [background_opacity]base00 */
+/* #else */
+/* *.background:   base00 */
+/* #endif */
+/* *.cursorColor:  base05 */
 
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
+/* *.color0:       base00 */
+/* *.color1:       base08 */
+/* *.color2:       base0B */
+/* *.color3:       base0A */
+/* *.color4:       base0D */
+/* *.color5:       base0E */
+/* *.color6:       base0C */
+/* *.color7:       base05 */
 
-*.color8:       base03
-*.color9:       base08
-*.color10:      base0B
-*.color11:      base0A
-*.color12:      base0D
-*.color13:      base0E
-*.color14:      base0C
-*.color15:      base07
+/* *.color8:       base03 */
+/* *.color9:       base08 */
+/* *.color10:      base0B */
+/* *.color11:      base0A */
+/* *.color12:      base0D */
+/* *.color13:      base0E */
+/* *.color14:      base0C */
+/* *.color15:      base07 */
 
-! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
-! use 'shell' template to set these if necessary
-*.color16:      base09
-*.color17:      base0F
-*.color18:      base01
-*.color19:      base02
-*.color20:      base04
-*.color21:      base06
+/* ! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt), */
+/* ! use 'shell' template to set these if necessary */
+/* *.color16:      base09 */
+/* *.color17:      base0F */
+/* *.color18:      base01 */
+/* *.color19:      base02 */
+/* *.color20:      base04 */
+/* *.color21:      base06 */
 
 /* ! Elio Theme */
 /* #define base00 #041A3B */
@@ -271,16 +271,55 @@
 /* *.color14:      base0B */
 /* *.color15:      base0F */
 
+! Kuki Pastela Theme
+#define base00 #1C1B2F
+#define base01 #2E2C40
+#define base02 #44425F
+#define base03 #A5D6A7
+#define base04 #FFE082
+#define base05 #F8F8F2
+#define base06 #FFF3B0
+#define base07 #FFFFFF
+#define base08 #FF9AA2
+#define base09 #FFAB91
+#define base0A #D4E157
+#define base0B #A7FFEB
+#define base0C #B3E5FC
+#define base0D #AEC6FF
+#define base0E #F48FB1
+#define base0F #D1C4E9
+
+*.background:   base00
+*.foreground:   base05
+*.cursorColor:  base05
+
+*.color0:       base01
+*.color1:       base08
+*.color2:       base03
+*.color3:       base04
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0B
+*.color7:       base05
+
+*.color8:       base02
+*.color9:       base09
+*.color10:      base0A
+*.color11:      base06
+*.color12:      base0C
+*.color13:      base0F
+*.color14:      base0B
+*.color15:      base07
 
 ! DWM Colors
 dwm.normbordercolor: base02
 dwm.normbgcolor:     base00
 dwm.normfgcolor:     base07
 dwm.selbordercolor:  base0E
-dwm.selbgcolor:      base0C
+dwm.selbgcolor:      base0E
 dwm.selfgcolor:      base00
 
-
+!*faceName: xft:terminus:size=9
 /* *.background: .color0 */
 /* *.color256: 0#1d2021 */
 /* *.color257: 15#ebdbb2 */
