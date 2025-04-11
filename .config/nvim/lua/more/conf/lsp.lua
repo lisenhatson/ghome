@@ -34,6 +34,12 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
+                "bashls",
+                "superhtml",
+                "pyright",
+                "cssls",
+                "grammarly",
+                "ts_ls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -41,7 +47,6 @@ return {
                         capabilities = capabilities
                     }
                 end,
-
                 zls = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.zls.setup({

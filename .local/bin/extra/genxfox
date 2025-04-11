@@ -1,0 +1,8 @@
+#!/bin/sh
+
+xrdb -query | grep '^\*' | while read -r line; do
+    key=$(echo "$line" | cut -d: -f1 | sed 's/^\*\.*//')
+    value=$(echo "$line" | cut -d: -f2- | xargs)
+    echo "--$key: $value;"
+done > ~/.config/firefox/user.css
+

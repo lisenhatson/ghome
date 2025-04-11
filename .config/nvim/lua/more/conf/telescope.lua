@@ -12,6 +12,11 @@ return {
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+        vim.keymap.set('n', '<leader>pd',  function ()
+            require('telescope.builtin').find_files {
+                cwd = vim.fn.fnamemodify(vim.fn.expand('%:p'), ':h')
+            }
+        end)
         vim.keymap.set('n', '<leader>en',  function ()
             require('telescope.builtin').find_files {
                 cwd = vim.fn.stdpath("config")
