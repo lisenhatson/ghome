@@ -14,62 +14,62 @@
 /* cyan		6	14 */
 /* white	7	15 */
 
-/* ! Twilight Depths - Xresources Theme */
-/* ! Based on Harmonic16 Dark with a deeper blue focus */
-/* ! Created on March 17, 2025 */
+! Twilight Depths - Xresources Theme
+! Based on Harmonic16 Dark with a deeper blue focus
+! Created on March 17, 2025
 
-/* ! Define base colors */
-/* #define base00 #0a1824 */
-/* #define base01 #1a2f46 */
-/* #define base02 #354c69 */
-/* #define base03 #526e89 */
-/* #define base04 #98aec2 */
-/* #define base05 #c5d2e0 */
-/* #define base06 #dfe7ef */
-/* #define base07 #f0f5fa */
-/* #define base08 #cf7346 */
-/* #define base09 #d9b343 */
-/* #define base0A #7ac256 */
-/* #define base0B #42d0a5 */
-/* #define base0C #3e9bd8 */
-/* #define base0D #9c52d9 */
-/* #define base0E #d84e99 */
-/* #define base0F #e05252 */
+! Define base colors
+#define base00 #0a1824
+#define base01 #1a2f46
+#define base02 #354c69
+#define base03 #526e89
+#define base04 #98aec2
+#define base05 #c5d2e0
+#define base06 #dfe7ef
+#define base07 #f0f5fa
+#define base08 #cf7346
+#define base09 #d9b343
+#define base0A #7ac256
+#define base0B #42d0a5
+#define base0C #3e9bd8
+#define base0D #9c52d9
+#define base0E #d84e99
+#define base0F #e05252
 
-/* *.foreground:   base05 */
-/* #ifdef background_opacity */
-/* *.background:   [background_opacity]base00 */
-/* #else */
-/* *.background:   base00 */
-/* #endif */
-/* *.cursorColor:  base05 */
+*.foreground:   base05
+#ifdef background_opacity
+*.background:   [background_opacity]base00
+#else
+*.background:   base00
+#endif
+*.cursorColor:  base05
 
-/* *.color0:       base00 */
-/* *.color1:       base08 */
-/* *.color2:       base0B */
-/* *.color3:       base0A */
-/* *.color4:       base0D */
-/* *.color5:       base0E */
-/* *.color6:       base0C */
-/* *.color7:       base05 */
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
 
-/* *.color8:       base03 */
-/* *.color9:       base08 */
-/* *.color10:      base0B */
-/* *.color11:      base0A */
-/* *.color12:      base0D */
-/* *.color13:      base0E */
-/* *.color14:      base0C */
-/* *.color15:      base07 */
+*.color8:       base03
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
+*.color15:      base07
 
-/* ! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt), */
-/* ! use 'shell' template to set these if necessary */
-/* *.color16:      base09 */
-/* *.color17:      base0F */
-/* *.color18:      base01 */
-/* *.color19:      base02 */
-/* *.color20:      base04 */
-/* *.color21:      base06 */
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
 
 /* ! Elio Theme */
 /* #define base00 #041A3B */
@@ -111,24 +111,23 @@
 /* *.color14:      base0B */
 /* *.color15:      base07 */
 
-
-/* ! Catpuccin Latte Tweaked */
-/* #define base00 #EFF1F5 */
-/* #define base01 #3B3F50 */
-/* #define base02 #52576D */
-/* #define base03 #3A8938 */
-/* #define base04 #C27716 */
-/* #define base05 #2C2F3F */
-/* #define base06 #B96E14 */
-/* #define base07 #9CA0AE */
-/* #define base08 #B4142A */
-/* #define base09 #B4142A */
-/* #define base0A #2E7E23 */
-/* #define base0B #147A7F */
-/* #define base0C #1556C3 */
-/* #define base0D #1556C3 */
-/* #define base0E #C051A6 */
-/* #define base0F #A0A4B0 */
+/* ! Kuki Pastela Refined */
+/* #define base00 #1C1B2A */
+/* #define base01 #2E2D3F */
+/* #define base02 #45425A */
+/* #define base03 #B5E7A0 */
+/* #define base04 #FFE29A */
+/* #define base05 #F3F3F3 */
+/* #define base06 #FFF7B3 */
+/* #define base07 #FFFFFF */
+/* #define base08 #FFB1B5 */
+/* #define base09 #FFBC9A */
+/* #define base0A #DCE775 */
+/* #define base0B #A2F2E1 */
+/* #define base0C #B2DFFF */
+/* #define base0D #ADC9FF */
+/* #define base0E #F6A9C6 */
+/* #define base0F #D8C4F0 */
 
 /* *.background:   base00 */
 /* *.foreground:   base05 */
@@ -141,182 +140,24 @@
 /* *.color4:       base0D */
 /* *.color5:       base0E */
 /* *.color6:       base0B */
-/* *.color7:       base07 */
+/* *.color7:       base05 */
 
 /* *.color8:       base02 */
 /* *.color9:       base09 */
 /* *.color10:      base0A */
 /* *.color11:      base06 */
 /* *.color12:      base0C */
-/* *.color13:      base0E */
+/* *.color13:      base0F */
 /* *.color14:      base0B */
-/* *.color15:      base0F */
-
-/* #define base00 #1F1F28 */
-/* #define base01 #090618 */
-/* #define base02 #727169 */
-/* #define base03 #C34043 */
-/* #define base04 #C0A36E */
-/* #define base05 #DCD7BA */
-/* #define base06 #E6C384 */
-/* #define base07 #C8C093 */
-/* #define base08 #E82424 */
-/* #define base09 #E82424 */
-/* #define base0A #98BB6C */
-/* #define base0B #7AA89F */
-/* #define base0C #7FB4CA */
-/* #define base0D #7E9CD8 */
-/* #define base0E #938AA9 */
-/* #define base0F #DCD7BA */
-
-/* *.background:   base00 */
-/* *.foreground:   base05 */
-/* *.cursorColor:  base05 */
-
-/* *.color0:       base01 */
-/* *.color1:       base03 */
-/* *.color2:       base0A */
-/* *.color3:       base04 */
-/* *.color4:       base0D */
-/* *.color5:       base0E */
-/* *.color6:       base0B */
-/* *.color7:       base07 */
-
-/* *.color8:       base02 */
-/* *.color9:       base08 */
-/* *.color10:      base0A */
-/* *.color11:      base06 */
-/* *.color12:      base0C */
-/* *.color13:      base0E */
-/* *.color14:      base0B */
-/* *.color15:      base0F */
-
-/* ! Kanagawa Lotus */
-/* #define base00 #f2ecbc */
-/* #define base01 #1f1f28 */
-/* #define base02 #8a8980 */
-/* #define base03 #6f894e */
-/* #define base04 #77713f */
-/* #define base05 #545464 */
-/* #define base06 #836f4a */
-/* #define base07 #545464 */
-/* #define base08 #c84053 */
-/* #define base09 #d7474b */
-/* #define base0A #6e915f */
-/* #define base0B #597b75 */
-/* #define base0C #6693bf */
-/* #define base0D #4d699b */
-/* #define base0E #b35b79 */
-/* #define base0F #43436c */
-
-/* *.background:   base00 */
-/* *.foreground:   base01 */
-/* *.cursorColor:  base0F */
-
-/* *.color0:       base01 */
-/* *.color1:       base08 */
-/* *.color2:       base03 */
-/* *.color3:       base04 */
-/* *.color4:       base0D */
-/* *.color5:       base0E */
-/* *.color6:       base0B */
-/* *.color7:       base07 */
-
-/* *.color8:       base02 */
-/* *.color9:       base09 */
-/* *.color10:      base0A */
-/* *.color11:      base06 */
-/* *.color12:      base0C */
-/* *.color13:      #624c83 */
-/* *.color14:      base0F */
 /* *.color15:      base07 */
 
-/* ! Kanagawa Dragon */
-/* #define base00 #181616 */
-/* #define base01 #0D0C0C */
-/* #define base02 #A6A69C */
-/* #define base03 #C4746E */
-/* #define base04 #C4B28A */
-/* #define base05 #C5C9C5 */
-/* #define base06 #E6C384 */
-/* #define base07 #C8C093 */
-/* #define base08 #E46876 */
-/* #define base09 #E46876 */
-/* #define base0A #87A987 */
-/* #define base0B #7AA89F */
-/* #define base0C #7FB4CA */
-/* #define base0D #8BA4B0 */
-/* #define base0E #938AA9 */
-/* #define base0F #C5C9C5 */
-
-/* *.background:   base00 */
-/* *.foreground:   base05 */
-/* *.cursorColor:  base07 */
-
-/* *.color0:       base01 */
-/* *.color1:       base03 */
-/* *.color2:       base0A */
-/* *.color3:       base04 */
-/* *.color4:       base0D */
-/* *.color5:       base0E */
-/* *.color6:       base0B */
-/* *.color7:       base07 */
-
-/* *.color8:       base02 */
-/* *.color9:       base08 */
-/* *.color10:      base0A */
-/* *.color11:      base06 */
-/* *.color12:      base0C */
-/* *.color13:      base0E */
-/* *.color14:      base0B */
-/* *.color15:      base0F */
-
-! Kuki Pastela Theme
-#define base00 #1C1B2F
-#define base01 #2E2C40
-#define base02 #44425F
-#define base03 #A5D6A7
-#define base04 #FFE082
-#define base05 #F8F8F2
-#define base06 #FFF3B0
-#define base07 #FFFFFF
-#define base08 #FF9AA2
-#define base09 #FFAB91
-#define base0A #D4E157
-#define base0B #A7FFEB
-#define base0C #B3E5FC
-#define base0D #AEC6FF
-#define base0E #F48FB1
-#define base0F #D1C4E9
-
-*.background:   base00
-*.foreground:   base05
-*.cursorColor:  base05
-
-*.color0:       base01
-*.color1:       base08
-*.color2:       base03
-*.color3:       base04
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0B
-*.color7:       base05
-
-*.color8:       base02
-*.color9:       base09
-*.color10:      base0A
-*.color11:      base06
-*.color12:      base0C
-*.color13:      base0F
-*.color14:      base0B
-*.color15:      base07
 
 ! DWM Colors
 dwm.normbordercolor: base02
 dwm.normbgcolor:     base00
 dwm.normfgcolor:     base07
-dwm.selbordercolor:  base0E
-dwm.selbgcolor:      base0E
+dwm.selbordercolor:  base0C
+dwm.selbgcolor:      base0C
 dwm.selfgcolor:      base00
 
 !*faceName: xft:terminus:size=9

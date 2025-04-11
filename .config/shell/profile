@@ -18,6 +18,7 @@ export BROWSER="librewolf"
 # export CRYPTOURL="rate.sx"
 # export WTTRURL="wttr.in"
 
+export LS_COLORS="di=38;5;110:ln=38;5;117:ex=38;5;151"
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"

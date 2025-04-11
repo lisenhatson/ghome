@@ -54,17 +54,7 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# The "lfcd" of yazi
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	trap 'rm -f -- $tmp >/dev/null 2>&1'
-}
-
-# Use lf to switch directories and bind it to ctrl-p
+# Use lf to switch directories and bind it to ctrl-z
 lfcd () {
     tmp="$(mktemp -uq)"
     trap 'rm -f $tmp >/dev/null 2>&1 && trap - HUP INT QUIT TERM PWR EXIT' HUP INT QUIT TERM PWR EXIT
@@ -74,9 +64,7 @@ lfcd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
-bindkey -s '^p' '^ulfcd\n'
-
-bindkey -s '^z' '^uyy\n'
+bindkey -s '^z' '^ulfcd\n'
 
 bindkey -s '^f' '^utmux-sessionizer\n'
 
