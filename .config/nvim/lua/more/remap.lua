@@ -1,6 +1,13 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- Win Motion
+vim.keymap.set("n", "<c-j>", "<c-w><c-j>")
+vim.keymap.set("n", "<c-k>", "<c-w><c-k>")
+vim.keymap.set("n", "<c-l>", "<c-w><c-l>")
+vim.keymap.set("n", "<c-h>", "<c-w><c-h>")
+
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -60,31 +67,13 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", ",k", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", ",j", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
-vim.keymap.set(
-    "n",
-    "<leader>ee",
-    "oif err != nil {<CR>}<Esc>Oreturn err<Esc>"
-)
-
-vim.keymap.set(
-    "n",
-    "<leader>ea",
-    "oassert.NoError(err, \"\")<Esc>F\";a"
-)
-
-vim.keymap.set(
-    "n",
-    "<leader>el",
-    "oif err != nil {<CR>}<Esc>O.logger.Error(\"error\", \"error\", err)<Esc>F.;i"
-)
 
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
@@ -92,3 +81,48 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+
+local statusline_disabled = false
+require("more.conf.colorschemes")
+
+vim.keymap.set("n", "<leader>zv", function()
+  statusline_disabled = not statusline_disabled
+
+  if statusline_disabled then
+    -- === Disable statusline & color ===
+    vim.cmd("colorscheme quiet")
+    vim.cmd("highlight Normal guibg=black guifg=white")
+    vim.opt.laststatus = 0
+    package.loaded["more.conf.lualine"] = nil
+  else
+    -- === Re-enable statusline & color ===
+    SetColor()
+    vim.cmd("highlight Normal guibg=none")
+    vim.cmd("syntax on")
+    vim.opt.laststatus = 3
+
+    -- Reload your statusline
+    package.loaded["more.conf.lualine"] = nil
+
+  end end)
+
+
+vim.keymap.set("n", "j", function()
+  local count = vim.v.count
+
+  if count == 0 then
+    return "gj"
+  else
+    return "j"
+  end
+end, { expr = true })
+
+vim.keymap.set("n", "k", function()
+  local count = vim.v.count
+
+  if count == 0 then
+    return "gk"
+  else
+    return "k"
+  end
+end, { expr = true })

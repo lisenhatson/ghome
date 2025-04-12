@@ -1,7 +1,7 @@
 require("more.set")
 require("more.remap")
 require("more.lazy")
-require("more.conf.colors")
+require("more.conf.colorschemes")
 
 local augroup = vim.api.nvim_create_augroup
 local moreGroup = augroup('LisenHatson', {})
@@ -57,7 +57,7 @@ autocmd({"BufWritePost"}, {
 autocmd('BufEnter', {
     group = moreGroup,
     callback = function()
-            ColorMyPencils()
+            SetColor()
         end
 })
 
@@ -79,6 +79,23 @@ autocmd('LspAttach', {
     end
 })
 
+autocmd("ColorScheme", {
+    pattern = "*",
+    callback = function()
+        -- Apply transparency to both Normal and NormalFloat
+        vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+        -- Additional highlight groups that often need transparency
+        vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+        vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+        vim.api.nvim_set_hl(0, "Folded", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NonText", { bg = "none" })
+        vim.api.nvim_set_hl(0, "SpecialKey", { bg = "none" })
+        vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
+        vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+    end
+})
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0

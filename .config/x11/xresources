@@ -131,7 +131,7 @@
 
 *.background:   base00
 *.foreground:   base05
-*.cursorColor:  base05
+/* *.cursorColor:  base05 */
 
 *.color0:       base01
 *.color1:       base08
