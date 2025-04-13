@@ -38,7 +38,6 @@ return {
                 "superhtml",
                 "pyright",
                 "cssls",
-                "grammarly",
                 "ts_ls",
             },
             handlers = {

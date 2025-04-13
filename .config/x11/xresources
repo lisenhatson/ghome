@@ -4,15 +4,6 @@
 !! Set a default font and font size as below:
 *.font: monospace:size=11
 
-/* name		dark	light */
-/* black	0	8 */
-/* red		1	9 */
-/* green	2	10 */
-/* yellow	3	11 */
-/* blue		4	12 */
-/* purple	5	13 */
-/* cyan		6	14 */
-/* white	7	15 */
 
 /* ! Twilight Depths - Xresources Theme */
 /* ! Based on Harmonic16 Dark with a deeper blue focus */
@@ -62,8 +53,6 @@
 /* *.color14:      base0C */
 /* *.color15:      base07 */
 
-/* ! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt), */
-/* ! use 'shell' template to set these if necessary */
 /* *.color16:      base09 */
 /* *.color17:      base0F */
 /* *.color18:      base01 */
@@ -160,7 +149,17 @@ dwm.selbordercolor:  base0E
 dwm.selbgcolor:      base0E
 dwm.selfgcolor:      base00
 
-!*faceName: xft:terminus:size=9
+
+/* name		dark	light */
+/* black	0	8 */
+/* red		1	9 */
+/* green	2	10 */
+/* yellow	3	11 */
+/* blue		4	12 */
+/* purple	5	13 */
+/* cyan		6	14 */
+/* white	7	15 */
+
 /* *.background: .color0 */
 /* *.color256: 0#1d2021 */
 /* *.color257: 15#ebdbb2 */

@@ -20,7 +20,6 @@
 .config/thorium/
 .config/thorium/**
 
-# AI sucks
 !.config/dunst/
 !.config/fontconfig/
 !.config/gtk-2.0/
@@ -42,6 +41,7 @@
 !.config/firefox/
 !.config/mpd/
 !.config/nsxiv/
+!.config/picom/
 !.config/pipewire/
 !.config/pcmanfm/
 !.config/shell/
@@ -71,6 +71,7 @@
 !.config/firefox/**
 !.config/mpd/**
 !.config/nsxiv/**
+!.config/picom/**
 !.config/pipewire/**
 !.config/pcmanfm/**
 !.config/shell/**

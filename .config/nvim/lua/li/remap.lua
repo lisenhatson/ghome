@@ -30,10 +30,10 @@ end)
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
+vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -43,24 +43,24 @@ vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- Open a terminal at the bottom of the screen with a fixed height.
 vim.keymap.set("n", ",sT", function()
-  vim.cmd.new()
-  vim.cmd.wincmd "J"
-  vim.api.nvim_win_set_height(0, 12)
-  vim.wo.winfixheight = true
-  vim.cmd.term()
-  vim.api.nvim_feedkeys('i', 'n', false)
+    vim.cmd.new()
+    vim.cmd.wincmd "J"
+    vim.api.nvim_win_set_height(0, 12)
+    vim.wo.winfixheight = true
+    vim.cmd.term()
+    vim.api.nvim_feedkeys('i', 'n', false)
 end)
 
 -- Open a terminal at current directory where the currently edited text resides.
 vim.keymap.set("n", ",st", function()
-  local dir = vim.fn.fnamemodify(vim.fn.expand('%:p'), ':h')
-  vim.cmd.new()
-  vim.cmd.wincmd "J"
-  vim.api.nvim_win_set_height(0, 12)
-  vim.wo.winfixheight = true
-  vim.cmd('lcd' .. dir)
-  vim.cmd.term()
-  vim.api.nvim_feedkeys('i', 'n', false)
+    local dir = vim.fn.fnamemodify(vim.fn.expand('%:p'), ':h')
+    vim.cmd.new()
+    vim.cmd.wincmd "J"
+    vim.api.nvim_win_set_height(0, 12)
+    vim.wo.winfixheight = true
+    vim.cmd('lcd' .. dir)
+    vim.cmd.term()
+    vim.api.nvim_feedkeys('i', 'n', false)
 end)
 
 vim.keymap.set("n", "Q", "<nop>")
@@ -81,48 +81,50 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+vim.keymap.set("n", "<leader>r", function()
+    require('lualine').refresh()
+end)
 
 local statusline_disabled = false
-require("more.conf.colorschemes")
+require("li.plugins.colorschemes")
 
 vim.keymap.set("n", "<leader>zv", function()
-  statusline_disabled = not statusline_disabled
+    statusline_disabled = not statusline_disabled
 
-  if statusline_disabled then
-    -- === Disable statusline & color ===
-    vim.cmd("colorscheme quiet")
-    vim.cmd("highlight Normal guibg=black guifg=white")
-    vim.opt.laststatus = 0
-    package.loaded["more.conf.lualine"] = nil
-  else
-    -- === Re-enable statusline & color ===
-    SetColor()
-    vim.cmd("highlight Normal guibg=none")
-    vim.cmd("syntax on")
-    vim.opt.laststatus = 3
+    if statusline_disabled then
+        -- === Disable statusline & color ===
+        vim.cmd("colorscheme quiet")
+        vim.cmd("highlight Normal guibg=black guifg=white")
+        vim.opt.laststatus = 0
+        package.loaded["li.plugins.lualine"] = nil
+    else
+        -- === Re-enable statusline & color ===
+        SetColor()
+        vim.cmd("highlight Normal guibg=none")
+        vim.cmd("syntax on")
+        vim.opt.laststatus = 3
 
-    -- Reload your statusline
-    package.loaded["more.conf.lualine"] = nil
-
-  end end)
-
+        -- Reload your statusline
+        package.loaded["li.plugins.lualine"] = nil
+    end
+end)
 
 vim.keymap.set("n", "j", function()
-  local count = vim.v.count
+    local count = vim.v.count
 
-  if count == 0 then
-    return "gj"
-  else
-    return "j"
-  end
+    if count == 0 then
+        return "gj"
+    else
+        return "j"
+    end
 end, { expr = true })
 
 vim.keymap.set("n", "k", function()
-  local count = vim.v.count
+    local count = vim.v.count
 
-  if count == 0 then
-    return "gk"
-  else
-    return "k"
-  end
+    if count == 0 then
+        return "gk"
+    else
+        return "k"
+    end
 end, { expr = true })

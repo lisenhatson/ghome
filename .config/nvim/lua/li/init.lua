@@ -1,10 +1,10 @@
-require("more.set")
-require("more.remap")
-require("more.lazy")
-require("more.conf.colorschemes")
+require("li.set")
+require("li.remap")
+require("li.lazy")
+require("li.plugins.colorschemes")
 
 local augroup = vim.api.nvim_create_augroup
-local moreGroup = augroup('LisenHatson', {})
+local liGroup = augroup('LisenHatson', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -15,7 +15,7 @@ end
 
 vim.cmd.filetype("plugin on")
 
-vim.schedule(function ()
+vim.schedule(function()
     vim.opt.clipboard = "unnamedplus"
 end)
 
@@ -36,34 +36,38 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
-    group = moreGroup,
+autocmd({ "BufWritePre" }, {
+    group = liGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
 
-autocmd({"BufRead", "BufNewFile"}, {
-    group = moreGroup,
-    pattern = {"Xresources", "Xdefaults", "xresources", "xdefaults"},
+autocmd({ "BufRead", "BufNewFile" }, {
+    group = liGroup,
+    pattern = { "Xresources", "Xdefaults", "xresources", "xdefaults" },
     command = "set filetype=xdefaults"
 })
 
-autocmd({"BufWritePost"}, {
-    group = moreGroup,
-    pattern = {"Xresources", "Xdefaults", "xresources", "xdefaults"},
+autocmd({ "BufWritePost" }, {
+    group = liGroup,
+    pattern = { "Xresources", "Xdefaults", "xresources", "xdefaults" },
     command = "!xrdb %"
 })
 
-autocmd('BufEnter', {
-    group = moreGroup,
-    callback = function()
-            SetColor()
-        end
-})
+-- autocmd('BufEnter', {
+--     group = liGroup,
+--     callback = function()
+--             SetColor()
+--         end
+-- })
+
+vim.schedule(function()
+    SetColor()
+end)
 
 
 autocmd('LspAttach', {
-    group = moreGroup,
+    group = liGroup,
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -79,22 +83,25 @@ autocmd('LspAttach', {
     end
 })
 
-autocmd("ColorScheme", {
+-- Transparency
+autocmd('ColorScheme', {
     pattern = "*",
     callback = function()
-        -- Apply transparency to both Normal and NormalFloat
         vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
-        -- Additional highlight groups that often need transparency
-        vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-        vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-        vim.api.nvim_set_hl(0, "Folded", { bg = "none" })
-        vim.api.nvim_set_hl(0, "NonText", { bg = "none" })
-        vim.api.nvim_set_hl(0, "SpecialKey", { bg = "none" })
-        vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
-        vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
     end
+})
+
+-- Set local settings for terminal buffers
+autocmd('TermOpen', {
+    group = liGroup,
+    callback = function()
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+        vim.opt_local.scrolloff = 0
+
+        vim.bo.filetype = "terminal"
+    end,
 })
 
 vim.g.netrw_browse_split = 0

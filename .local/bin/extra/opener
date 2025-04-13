@@ -1,13 +1,45 @@
-#!/usr/bin/env sh
-# https://github.com/agryphus/nixrice/blob/master/misc/.local/bin/opener
+#!/usr/bin/bash
 # Script for opening a file, intended for use by a terminal file manager.
+
+function help_exit() {
+    echo "Utility for opening different filetypes.
+
+Usage:
+  $ opener [-n {num}] {file} # Open the file in the current shell
+  $ opener [-n {num}] detatch {file} # Detatch the program into a new shell
+
+[num]: which opener to use, in order of precedence. defaults to 1
+"
+    exit 0
+}
+
+num=1
+[ "$1" = "-n" ] && num=$2 && shift 2
 
 # Whether to open in a new window
 detatch=0
 [ "$1" = "detatch" ] && detatch=1 && shift 1
 
+list=0
+[ "$1" = "list" ] && list=1 && shift 1
+
 # First arg must be a file
-[ ! -f "$1" ] && echo "Not a file: '$1'" && exit 1
+file="$1"
+[ ! -f "$file" ] && echo "Not a file: '$file'" && help_exit
+while [ -L "$file" ]; do
+    # Resolve symlinks
+    file=$(readlink "$file")
+done
+
+function list_exit() {
+    [ "$list" -ne 1 ] && return
+    i=1
+    for arg in "$@"; do
+        echo "$i: $arg"
+        i=$((i + 1))
+    done
+    exit 0
+}
 
 function launch_gui() {
     if [ "$detatch" -eq 0 ]; then
@@ -41,28 +73,48 @@ function launch_term() {
     fi
 }
 
-case $(file --mime-type "$1" -b) in
+case $(file --mime-type "$file" -b) in
     application/javascript|\
     application/json|\
 	application/pgp-encrypted|\
     application/x-subrip|\
     inode/x-empty|\
     text/*)
-        case "${1##*.}" in
-            org|typ)
-                # Any "document" like file ought to be in emacs
-                launch_gui emacsclient -c "$1"
-                exit
-                ;;
-        esac
+        list_exit \
+            "Neovim" \
+            "Emacs GUI" \
+            "Emacs TUI"
 
-        launch_term nvim "$1"
+        if [ "$num" -eq 2 ]; then
+            launch_gui emacsclient -c -a emacs "$file"
+        elif [ "$num" -eq 3 ]; then
+            launch_term emacsclient -nw -a 'emacs -nw' "$file"
+        else
+            launch_term nvim "$file"
+        fi
+        ;;
+    image/x-xcf)
+        list_exit \
+            "Gimp"
+
+        launch_gui gimp "$file"
         ;;
     image/*)
-        launch_gui nsxiv "$1"
+        list_exit \
+            "nsxiv" \
+            "Gimp"
+
+        if [ "$num" -eq 2 ]; then
+            launch_gui gimp "$file"
+        else
+            launch_gui nsxiv "$file"
+        fi
         ;;
 	video/*)
-        launch_gui mpv -quiet "$1"
+        list_exit \
+            "MPV"
+
+        launch_gui mpv -quiet "$file"
         ;;
     application/epub*|\
     application/octet-stream|\
@@ -70,13 +122,20 @@ case $(file --mime-type "$1" -b) in
     application/postscript|\
     application/vnd.djvu|\
     image/vnd.djvu)
-        launch_gui zathura "$1"
+        list_exit \
+            "Zathura"
+
+        launch_gui zathura "$file"
         ;;
     audio/*|\
     video/x-ms-asf)
+        list_exit \
+            "MPV"
+
+        # If it has an album cover, launch graphical mpv
         [ -z "$(mediainfo "$1" | grep "Cover\s*: Yes")" ] \
-            && (launch_term mpv --audio-display=no "$1") \
-            || (launch_gui mpv "$1")
+            && (launch_term mpv --audio-display=no "$file") \
+            || (launch_gui mpv "$file")
         ;;
     application/msword|\
     application/octet-stream|\
@@ -93,9 +152,12 @@ case $(file --mime-type "$1" -b) in
     application/vnd.openxmlformats-officedocument.presentationml.presentation|\
     application/vnd.openxmlformats-officedocument.spreadsheetml.sheet|\
     application/vnd.openxmlformats-officedocument.wordprocessingml.document)
-        launch_gui libreoffice "$1"
+        list_exit \
+            "LibreOffice"
+        launch_gui libreoffice "$file"
         ;;
     *)
+        echo "No program defined for this filetype."
         ;;
 esac
 

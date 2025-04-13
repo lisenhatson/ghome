@@ -33,8 +33,5 @@ return {
     vim.keymap.set("n", "<leader>zc", tk.show_calendar)
     vim.keymap.set("n", "<leader>zb", tk.show_backlinks)
     vim.keymap.set("n", "<leader>zI", tk.insert_img_link)
-
-    -- Call insert link automatically when we start typing a link
-    vim.keymap.set("i", "[[", "<cmd>Telekasten insert_link<CR>")
   end,
 }
