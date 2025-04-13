@@ -1,10 +1,10 @@
-require("li.set")
-require("li.remap")
-require("li.lazy")
-require("li.plugins.colorschemes")
+require("profile.set")
+require("profile.remap")
+require("profile.lazy")
+require("profile.plugins.colorschemes")
 
 local augroup = vim.api.nvim_create_augroup
-local liGroup = augroup('LisenHatson', {})
+local profileGroup = augroup('LisenHatson', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -37,25 +37,25 @@ autocmd('TextYankPost', {
 })
 
 autocmd({ "BufWritePre" }, {
-    group = liGroup,
+    group = profileGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
 
 autocmd({ "BufRead", "BufNewFile" }, {
-    group = liGroup,
+    group = profileGroup,
     pattern = { "Xresources", "Xdefaults", "xresources", "xdefaults" },
     command = "set filetype=xdefaults"
 })
 
 autocmd({ "BufWritePost" }, {
-    group = liGroup,
+    group = profileGroup,
     pattern = { "Xresources", "Xdefaults", "xresources", "xdefaults" },
     command = "!xrdb %"
 })
 
 -- autocmd('BufEnter', {
---     group = liGroup,
+--     group = profileGroup,
 --     callback = function()
 --             SetColor()
 --         end
@@ -67,7 +67,7 @@ end)
 
 
 autocmd('LspAttach', {
-    group = liGroup,
+    group = profileGroup,
     callback = function(e)
         local opts = { buffer = e.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -94,7 +94,7 @@ autocmd('ColorScheme', {
 
 -- Set local settings for terminal buffers
 autocmd('TermOpen', {
-    group = liGroup,
+    group = profileGroup,
     callback = function()
         vim.opt_local.number = false
         vim.opt_local.relativenumber = false

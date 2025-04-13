@@ -86,7 +86,7 @@ vim.keymap.set("n", "<leader>r", function()
 end)
 
 local statusline_disabled = false
-require("li.plugins.colorschemes")
+require("profile.plugins.colorschemes")
 
 vim.keymap.set("n", "<leader>zv", function()
     statusline_disabled = not statusline_disabled
@@ -96,7 +96,7 @@ vim.keymap.set("n", "<leader>zv", function()
         vim.cmd("colorscheme quiet")
         vim.cmd("highlight Normal guibg=black guifg=white")
         vim.opt.laststatus = 0
-        package.loaded["li.plugins.lualine"] = nil
+        package.loaded["profile.plugins.lualine"] = nil
     else
         -- === Re-enable statusline & color ===
         SetColor()
@@ -105,7 +105,7 @@ vim.keymap.set("n", "<leader>zv", function()
         vim.opt.laststatus = 3
 
         -- Reload your statusline
-        package.loaded["li.plugins.lualine"] = nil
+        package.loaded["profile.plugins.lualine"] = nil
     end
 end)
 
