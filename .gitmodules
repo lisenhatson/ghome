@@ -1,3 +1,6 @@
 [submodule ".config/mpv/script_modules/mpvSockets"]
 	path = .config/mpv/script_modules/mpvSockets
 	url = https://github.com/wis/mpvSockets.git
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/lisenhatson/config.nvim.git
