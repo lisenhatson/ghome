@@ -145,8 +145,8 @@
 dwm.normbordercolor: base02
 dwm.normbgcolor:     base00
 dwm.normfgcolor:     base07
-dwm.selbordercolor:  base0E
-dwm.selbgcolor:      base0E
+dwm.selbordercolor:  base03
+dwm.selbgcolor:      base03
 dwm.selfgcolor:      base00
 
 

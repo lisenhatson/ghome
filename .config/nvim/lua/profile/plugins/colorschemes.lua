@@ -1,11 +1,18 @@
 -- This is Primeagen's ColorMyPencils + TJ's colorschemes
 --
 function SetColor(color)
-	color = color or "dark_flat"
+	color = color or "gruvbox"
 	vim.cmd.colorscheme(color)
     -- Transparency
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+    vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
+    vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none" })
+    vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+    vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
+    vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
 end
 
 return {
@@ -14,6 +21,7 @@ return {
   "cpea2506/one_monokai.nvim",
   "embark-theme/vim",
   "Shatur/neovim-ayu",
+  "ellisonleao/gruvbox.nvim",
   "https://gitlab.com/bartekjaszczak/finale-nvim",
   { "rose-pine/neovim", name = "rose-pine" },
   { "catppuccin/nvim", name = "catppuccin" },
