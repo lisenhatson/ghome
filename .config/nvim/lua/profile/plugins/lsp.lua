@@ -34,11 +34,12 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
-                "bashls",
-                "superhtml",
+                "clangd",
                 "pyright",
+                "superhtml",
                 "cssls",
                 "ts_ls",
+                "bashls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)

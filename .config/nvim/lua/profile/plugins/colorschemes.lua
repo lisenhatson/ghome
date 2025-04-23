@@ -13,6 +13,7 @@ function SetColor(color)
     vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
     vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
     vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+    vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "cyan" })
 end
 
 return {

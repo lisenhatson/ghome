@@ -59,11 +59,11 @@ return {
                 center = {
                     {
                         icon_hl = "Title",
-                        desc = "New file",
+                        desc = "Netrw",
                         desc_hl = "String",
                         key = "e",
                         key_hl = "Number",
-                        action = "ene | startinsert",
+                        action = "Ex .",
                     },
                     {
                         icon_hl = "Title",
@@ -91,7 +91,7 @@ return {
                     },
                 },
                 footer = {
-                    "Nipah",
+                    "Nipah!",
                 },
             },
         })
