@@ -59,19 +59,19 @@ return {
                 center = {
                     {
                         icon_hl = "Title",
-                        desc = "Netrw",
+                        desc = "New File",
                         desc_hl = "String",
                         key = "e",
                         key_hl = "Number",
-                        action = "Ex .",
+                        action = "ene | startinsert",
                     },
                     {
                         icon_hl = "Title",
-                        desc = "Telescope",
+                        desc = "Netrw",
                         desc_hl = "String",
-                        key = "f",
+                        key = "n",
                         key_hl = "Number",
-                        action = "Telescope fd",
+                        action = "Ex .",
                     },
                     {
                         icon_hl = "Title",
@@ -81,17 +81,9 @@ return {
                         key_hl = "Number",
                         action = "checkhealth | Lazy update | MasonUpdate",
                     },
-                    {
-                        icon_hl = "Title",
-                        desc = "Quit",
-                        desc_hl = "String",
-                        key = "q",
-                        key_hl = "Number",
-                        action = "q!",
-                    },
                 },
                 footer = {
-                    "Nipah!",
+                    "Nipaah!",
                 },
             },
         })

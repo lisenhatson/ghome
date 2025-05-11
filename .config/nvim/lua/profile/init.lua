@@ -87,15 +87,15 @@ autocmd('LspAttach', {
 autocmd('ColorScheme', {
     pattern = "*",
     callback = function()
-        vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-        vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        -- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+        -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
-        vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
-        vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none" })
-        vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-        vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
-        vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+        -- vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
+        -- vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none" })
+        -- vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+        -- vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
+        -- vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
     end
 })
 
@@ -111,6 +111,3 @@ autocmd('TermOpen', {
     end,
 })
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
