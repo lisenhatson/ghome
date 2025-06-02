@@ -34,8 +34,6 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
-                "clangd",
-                "pyright",
                 "superhtml",
                 "cssls",
                 "ts_ls",
